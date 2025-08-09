@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'task_model.g.dart';
@@ -22,7 +21,7 @@ enum TaskPriority {
 }
 
 @JsonSerializable()
-class TaskModel extends Equatable {
+class TaskModel {
   final String taskId;
   final String title;
   final String description;
@@ -78,18 +77,4 @@ class TaskModel extends Equatable {
       priority: priority ?? this.priority,
     );
   }
-
-  @override
-  List<Object?> get props => [
-    taskId,
-    title,
-    description,
-    assignedTo,
-    createdDate,
-    startDate,
-    dueDate,
-    actualEndDate,
-    status,
-    priority,
-  ];
 }

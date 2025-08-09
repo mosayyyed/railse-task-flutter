@@ -19,8 +19,12 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) => TaskModel(
   actualEndDate: json['actualEndDate'] == null
       ? null
       : DateTime.parse(json['actualEndDate'] as String),
-  status: $enumDecode(_$TaskStatusEnumMap, json['status']),
-  priority: $enumDecode(_$TaskPriorityEnumMap, json['priority']),
+  status:
+      $enumDecodeNullable(_$TaskStatusEnumMap, json['status']) ??
+      TaskStatus.notStarted,
+  priority:
+      $enumDecodeNullable(_$TaskPriorityEnumMap, json['priority']) ??
+      TaskPriority.medium,
 );
 
 Map<String, dynamic> _$TaskModelToJson(TaskModel instance) => <String, dynamic>{
@@ -47,27 +51,3 @@ const _$TaskPriorityEnumMap = {
   TaskPriority.medium: 'medium',
   TaskPriority.high: 'high',
 };
-
-K $enumDecode<K, V>(Map<K, V> enumValues, Object? source, {K? unknownValue}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries
-      .singleWhere(
-        (e) => e.value == source,
-        orElse: () {
-          if (unknownValue == null) {
-            throw ArgumentError(
-              '`$source` is not one of the supported values: '
-              '${enumValues.values.join(', ')}',
-            );
-          }
-          return MapEntry(unknownValue, enumValues.values.first);
-        },
-      )
-      .key;
-}
