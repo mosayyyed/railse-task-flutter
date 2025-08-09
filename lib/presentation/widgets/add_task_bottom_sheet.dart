@@ -38,10 +38,12 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
+      decoration: BoxDecoration(
+        color: colorScheme.surface,
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         ),
@@ -62,7 +64,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 width: 48,
                 height: 5,
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: colorScheme.onSurfaceVariant.withOpacity(0.4),
                   borderRadius: BorderRadius.circular(2.5),
                 ),
               ),
@@ -72,21 +74,24 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'Add New Task',
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.w700,
-                    color: Color(0xFF1A1A1A),
+                    color: colorScheme.onSurface,
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey[100],
+                    color: colorScheme.surfaceContainerHighest,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
-                    icon: const Icon(Icons.close, color: Colors.grey),
+                    icon: Icon(
+                      Icons.close,
+                      color: colorScheme.onSurfaceVariant,
+                    ),
                     onPressed: () => Navigator.of(context).pop(),
                   ),
                 ),
@@ -104,38 +109,53 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Task Title',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF1A1A1A),
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 8),
-                          TextFormField(
-                            controller: _titleController,
-                            decoration: InputDecoration(
-                              hintText: 'Enter task title',
-                              filled: true,
-                              fillColor: Colors.grey[50],
-                              border: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              focusedErrorBorder: InputBorder.none,
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 16,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: colorScheme.outline.withOpacity(0.5),
+                                width: 0.5,
                               ),
                             ),
-                            style: const TextStyle(fontSize: 16),
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Please enter task title';
-                              }
-                              return null;
-                            },
+                            child: TextFormField(
+                              controller: _titleController,
+                              decoration: InputDecoration(
+                                hintText: 'Enter task title',
+                                hintStyle: TextStyle(
+                                  color: colorScheme.onSurfaceVariant,
+                                ),
+                                filled: false,
+                                border: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                focusedErrorBorder: InputBorder.none,
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 16,
+                                ),
+                              ),
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: colorScheme.onSurface,
+                              ),
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Please enter task title';
+                                }
+                                return null;
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -144,39 +164,54 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Description',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF1A1A1A),
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 8),
-                          TextFormField(
-                            controller: _descriptionController,
-                            decoration: InputDecoration(
-                              hintText: 'Enter task description',
-                              filled: true,
-                              fillColor: Colors.grey[50],
-                              border: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              focusedErrorBorder: InputBorder.none,
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 16,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: colorScheme.outline.withOpacity(0.5),
+                                width: 0.5,
                               ),
                             ),
-                            maxLines: 3,
-                            style: const TextStyle(fontSize: 16),
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Please enter task description';
-                              }
-                              return null;
-                            },
+                            child: TextFormField(
+                              controller: _descriptionController,
+                              decoration: InputDecoration(
+                                hintText: 'Enter task description',
+                                hintStyle: TextStyle(
+                                  color: colorScheme.onSurfaceVariant,
+                                ),
+                                filled: false,
+                                border: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                focusedErrorBorder: InputBorder.none,
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 16,
+                                ),
+                              ),
+                              maxLines: 3,
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: colorScheme.onSurface,
+                              ),
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Please enter task description';
+                                }
+                                return null;
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -185,38 +220,53 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Assigned To',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF1A1A1A),
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 8),
-                          TextFormField(
-                            controller: _assignedToController,
-                            decoration: InputDecoration(
-                              hintText: 'Enter assignee name',
-                              filled: true,
-                              fillColor: Colors.grey[50],
-                              border: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              errorBorder: InputBorder.none,
-                              focusedErrorBorder: InputBorder.none,
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 16,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: colorScheme.outline.withOpacity(0.5),
+                                width: 0.5,
                               ),
                             ),
-                            style: const TextStyle(fontSize: 16),
-                            validator: (value) {
-                              if (value == null || value.trim().isEmpty) {
-                                return 'Please enter assignee name';
-                              }
-                              return null;
-                            },
+                            child: TextFormField(
+                              controller: _assignedToController,
+                              decoration: InputDecoration(
+                                hintText: 'Enter assignee name',
+                                hintStyle: TextStyle(
+                                  color: colorScheme.onSurfaceVariant,
+                                ),
+                                filled: false,
+                                border: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                focusedErrorBorder: InputBorder.none,
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 16,
+                                ),
+                              ),
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: colorScheme.onSurface,
+                              ),
+                              validator: (value) {
+                                if (value == null || value.trim().isEmpty) {
+                                  return 'Please enter assignee name';
+                                }
+                                return null;
+                              },
+                            ),
                           ),
                         ],
                       ),
@@ -225,20 +275,24 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Priority',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF1A1A1A),
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 8),
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             decoration: BoxDecoration(
-                              color: Colors.grey[50],
+                              color: colorScheme.surfaceContainerHighest,
                               borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: colorScheme.outline.withOpacity(0.5),
+                                width: 0.5,
+                              ),
                             ),
                             child: DropdownButtonFormField<TaskPriority>(
                               value: _selectedPriority,
@@ -250,7 +304,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                   vertical: 16,
                                 ),
                               ),
-                              hint: const Text('Select priority'),
+                              hint: Text(
+                                'Select priority',
+                                style: TextStyle(
+                                  color: colorScheme.onSurfaceVariant,
+                                ),
+                              ),
+                              dropdownColor: colorScheme.surface,
                               items: TaskPriority.values.map((priority) {
                                 return DropdownMenuItem(
                                   value: priority,
@@ -267,7 +327,10 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                       const SizedBox(width: 12),
                                       Text(
                                         _getPriorityText(priority),
-                                        style: const TextStyle(fontSize: 16),
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: colorScheme.onSurface,
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -289,12 +352,12 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Due Date',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
-                              color: Color(0xFF1A1A1A),
+                              color: colorScheme.onSurface,
                             ),
                           ),
                           const SizedBox(height: 8),
@@ -307,20 +370,27 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                                 vertical: 16,
                               ),
                               decoration: BoxDecoration(
-                                color: Colors.grey[50],
+                                color: colorScheme.surfaceContainerHighest,
                                 borderRadius: BorderRadius.circular(12),
+                                border: Border.all(
+                                  color: colorScheme.outline.withOpacity(0.5),
+                                  width: 0.5,
+                                ),
                               ),
                               child: Row(
                                 children: [
                                   Icon(
                                     Icons.calendar_today,
-                                    color: Colors.grey[600],
+                                    color: colorScheme.primary,
                                     size: 20,
                                   ),
                                   const SizedBox(width: 12),
                                   Text(
                                     '${_selectedDueDate.day}/${_selectedDueDate.month}/${_selectedDueDate.year}',
-                                    style: const TextStyle(fontSize: 16),
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: colorScheme.onSurface,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -341,13 +411,17 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   child: Container(
                     height: 52,
                     decoration: BoxDecoration(
-                      color: Colors.grey[100],
+                      color: colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(16),
+                      border: Border.all(
+                        color: colorScheme.outline.withOpacity(0.5),
+                        width: 0.5,
+                      ),
                     ),
                     child: TextButton(
                       onPressed: () => Navigator.of(context).pop(),
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.grey[700],
+                        foregroundColor: colorScheme.onSurfaceVariant,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
@@ -367,13 +441,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   child: Container(
                     height: 52,
                     decoration: BoxDecoration(
-                      color: const Color(0xFF007AFF),
+                      color: colorScheme.primary,
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: TextButton(
                       onPressed: _addTask,
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
+                        foregroundColor: colorScheme.onPrimary,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
