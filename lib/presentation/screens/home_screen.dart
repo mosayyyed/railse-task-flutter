@@ -38,7 +38,6 @@ class HomeScreen extends StatelessWidget {
           return const Center(child: Text('Welcome to Task Manager'));
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: const AddTaskFloatingActionButton(),
     );
   }
