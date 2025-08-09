@@ -12,8 +12,7 @@ part of 'task_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
-);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TaskState {
@@ -26,7 +25,8 @@ mixin _$TaskState {
     required TResult Function(TaskModel task) added,
     required TResult Function(TaskModel task) updated,
     required TResult Function(String taskId) deleted,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -36,7 +36,8 @@ mixin _$TaskState {
     TResult? Function(TaskModel task)? added,
     TResult? Function(TaskModel task)? updated,
     TResult? Function(String taskId)? deleted,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
@@ -47,7 +48,8 @@ mixin _$TaskState {
     TResult Function(TaskModel task)? updated,
     TResult Function(String taskId)? deleted,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(TaskInitial value) initial,
@@ -57,7 +59,8 @@ mixin _$TaskState {
     required TResult Function(TaskAdded value) added,
     required TResult Function(TaskUpdated value) updated,
     required TResult Function(TaskDeleted value) deleted,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(TaskInitial value)? initial,
@@ -67,7 +70,8 @@ mixin _$TaskState {
     TResult? Function(TaskAdded value)? added,
     TResult? Function(TaskUpdated value)? updated,
     TResult? Function(TaskDeleted value)? deleted,
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(TaskInitial value)? initial,
@@ -78,7 +82,8 @@ mixin _$TaskState {
     TResult Function(TaskUpdated value)? updated,
     TResult Function(TaskDeleted value)? deleted,
     required TResult orElse(),
-  }) => throw _privateConstructorUsedError;
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -104,9 +109,8 @@ class _$TaskStateCopyWithImpl<$Res, $Val extends TaskState>
 /// @nodoc
 abstract class _$$TaskInitialImplCopyWith<$Res> {
   factory _$$TaskInitialImplCopyWith(
-    _$TaskInitialImpl value,
-    $Res Function(_$TaskInitialImpl) then,
-  ) = __$$TaskInitialImplCopyWithImpl<$Res>;
+          _$TaskInitialImpl value, $Res Function(_$TaskInitialImpl) then) =
+      __$$TaskInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -114,9 +118,8 @@ class __$$TaskInitialImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskInitialImpl>
     implements _$$TaskInitialImplCopyWith<$Res> {
   __$$TaskInitialImplCopyWithImpl(
-    _$TaskInitialImpl _value,
-    $Res Function(_$TaskInitialImpl) _then,
-  ) : super(_value, _then);
+      _$TaskInitialImpl _value, $Res Function(_$TaskInitialImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
@@ -241,9 +244,8 @@ abstract class TaskInitial implements TaskState {
 /// @nodoc
 abstract class _$$TaskLoadingImplCopyWith<$Res> {
   factory _$$TaskLoadingImplCopyWith(
-    _$TaskLoadingImpl value,
-    $Res Function(_$TaskLoadingImpl) then,
-  ) = __$$TaskLoadingImplCopyWithImpl<$Res>;
+          _$TaskLoadingImpl value, $Res Function(_$TaskLoadingImpl) then) =
+      __$$TaskLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -251,9 +253,8 @@ class __$$TaskLoadingImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskLoadingImpl>
     implements _$$TaskLoadingImplCopyWith<$Res> {
   __$$TaskLoadingImplCopyWithImpl(
-    _$TaskLoadingImpl _value,
-    $Res Function(_$TaskLoadingImpl) _then,
-  ) : super(_value, _then);
+      _$TaskLoadingImpl _value, $Res Function(_$TaskLoadingImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
@@ -378,9 +379,8 @@ abstract class TaskLoading implements TaskState {
 /// @nodoc
 abstract class _$$TaskLoadedImplCopyWith<$Res> {
   factory _$$TaskLoadedImplCopyWith(
-    _$TaskLoadedImpl value,
-    $Res Function(_$TaskLoadedImpl) then,
-  ) = __$$TaskLoadedImplCopyWithImpl<$Res>;
+          _$TaskLoadedImpl value, $Res Function(_$TaskLoadedImpl) then) =
+      __$$TaskLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<TaskModel> tasks});
 }
@@ -390,23 +390,22 @@ class __$$TaskLoadedImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskLoadedImpl>
     implements _$$TaskLoadedImplCopyWith<$Res> {
   __$$TaskLoadedImplCopyWithImpl(
-    _$TaskLoadedImpl _value,
-    $Res Function(_$TaskLoadedImpl) _then,
-  ) : super(_value, _then);
+      _$TaskLoadedImpl _value, $Res Function(_$TaskLoadedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? tasks = null}) {
-    return _then(
-      _$TaskLoadedImpl(
-        null == tasks
-            ? _value._tasks
-            : tasks // ignore: cast_nullable_to_non_nullable
-                  as List<TaskModel>,
-      ),
-    );
+  $Res call({
+    Object? tasks = null,
+  }) {
+    return _then(_$TaskLoadedImpl(
+      null == tasks
+          ? _value._tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<TaskModel>,
+    ));
   }
 }
 
@@ -556,9 +555,8 @@ abstract class TaskLoaded implements TaskState {
 /// @nodoc
 abstract class _$$TaskErrorImplCopyWith<$Res> {
   factory _$$TaskErrorImplCopyWith(
-    _$TaskErrorImpl value,
-    $Res Function(_$TaskErrorImpl) then,
-  ) = __$$TaskErrorImplCopyWithImpl<$Res>;
+          _$TaskErrorImpl value, $Res Function(_$TaskErrorImpl) then) =
+      __$$TaskErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
@@ -568,23 +566,22 @@ class __$$TaskErrorImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskErrorImpl>
     implements _$$TaskErrorImplCopyWith<$Res> {
   __$$TaskErrorImplCopyWithImpl(
-    _$TaskErrorImpl _value,
-    $Res Function(_$TaskErrorImpl) _then,
-  ) : super(_value, _then);
+      _$TaskErrorImpl _value, $Res Function(_$TaskErrorImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? message = null}) {
-    return _then(
-      _$TaskErrorImpl(
-        null == message
-            ? _value.message
-            : message // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$TaskErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
@@ -728,9 +725,8 @@ abstract class TaskError implements TaskState {
 /// @nodoc
 abstract class _$$TaskAddedImplCopyWith<$Res> {
   factory _$$TaskAddedImplCopyWith(
-    _$TaskAddedImpl value,
-    $Res Function(_$TaskAddedImpl) then,
-  ) = __$$TaskAddedImplCopyWithImpl<$Res>;
+          _$TaskAddedImpl value, $Res Function(_$TaskAddedImpl) then) =
+      __$$TaskAddedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TaskModel task});
 }
@@ -740,23 +736,22 @@ class __$$TaskAddedImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskAddedImpl>
     implements _$$TaskAddedImplCopyWith<$Res> {
   __$$TaskAddedImplCopyWithImpl(
-    _$TaskAddedImpl _value,
-    $Res Function(_$TaskAddedImpl) _then,
-  ) : super(_value, _then);
+      _$TaskAddedImpl _value, $Res Function(_$TaskAddedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? task = null}) {
-    return _then(
-      _$TaskAddedImpl(
-        null == task
-            ? _value.task
-            : task // ignore: cast_nullable_to_non_nullable
-                  as TaskModel,
-      ),
-    );
+  $Res call({
+    Object? task = null,
+  }) {
+    return _then(_$TaskAddedImpl(
+      null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as TaskModel,
+    ));
   }
 }
 
@@ -900,9 +895,8 @@ abstract class TaskAdded implements TaskState {
 /// @nodoc
 abstract class _$$TaskUpdatedImplCopyWith<$Res> {
   factory _$$TaskUpdatedImplCopyWith(
-    _$TaskUpdatedImpl value,
-    $Res Function(_$TaskUpdatedImpl) then,
-  ) = __$$TaskUpdatedImplCopyWithImpl<$Res>;
+          _$TaskUpdatedImpl value, $Res Function(_$TaskUpdatedImpl) then) =
+      __$$TaskUpdatedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TaskModel task});
 }
@@ -912,23 +906,22 @@ class __$$TaskUpdatedImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskUpdatedImpl>
     implements _$$TaskUpdatedImplCopyWith<$Res> {
   __$$TaskUpdatedImplCopyWithImpl(
-    _$TaskUpdatedImpl _value,
-    $Res Function(_$TaskUpdatedImpl) _then,
-  ) : super(_value, _then);
+      _$TaskUpdatedImpl _value, $Res Function(_$TaskUpdatedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? task = null}) {
-    return _then(
-      _$TaskUpdatedImpl(
-        null == task
-            ? _value.task
-            : task // ignore: cast_nullable_to_non_nullable
-                  as TaskModel,
-      ),
-    );
+  $Res call({
+    Object? task = null,
+  }) {
+    return _then(_$TaskUpdatedImpl(
+      null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as TaskModel,
+    ));
   }
 }
 
@@ -1072,9 +1065,8 @@ abstract class TaskUpdated implements TaskState {
 /// @nodoc
 abstract class _$$TaskDeletedImplCopyWith<$Res> {
   factory _$$TaskDeletedImplCopyWith(
-    _$TaskDeletedImpl value,
-    $Res Function(_$TaskDeletedImpl) then,
-  ) = __$$TaskDeletedImplCopyWithImpl<$Res>;
+          _$TaskDeletedImpl value, $Res Function(_$TaskDeletedImpl) then) =
+      __$$TaskDeletedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String taskId});
 }
@@ -1084,23 +1076,22 @@ class __$$TaskDeletedImplCopyWithImpl<$Res>
     extends _$TaskStateCopyWithImpl<$Res, _$TaskDeletedImpl>
     implements _$$TaskDeletedImplCopyWith<$Res> {
   __$$TaskDeletedImplCopyWithImpl(
-    _$TaskDeletedImpl _value,
-    $Res Function(_$TaskDeletedImpl) _then,
-  ) : super(_value, _then);
+      _$TaskDeletedImpl _value, $Res Function(_$TaskDeletedImpl) _then)
+      : super(_value, _then);
 
   /// Create a copy of TaskState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? taskId = null}) {
-    return _then(
-      _$TaskDeletedImpl(
-        null == taskId
-            ? _value.taskId
-            : taskId // ignore: cast_nullable_to_non_nullable
-                  as String,
-      ),
-    );
+  $Res call({
+    Object? taskId = null,
+  }) {
+    return _then(_$TaskDeletedImpl(
+      null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
