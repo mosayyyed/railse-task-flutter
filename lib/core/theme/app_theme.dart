@@ -37,6 +37,7 @@ class AppTheme {
       // Color Scheme
       colorScheme: ColorScheme.light(
         primary: colors.primary,
+        onPrimary: AppColors.white,
         primaryContainer: colors.primaryLight,
         secondary: colors.secondary,
         secondaryContainer: colors.secondaryLight,
@@ -54,12 +55,12 @@ class AppTheme {
 
       // AppBar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: colors.surface,
-        foregroundColor: colors.textPrimary,
+        backgroundColor: colors.primary,
+        foregroundColor: colors.onPrimary,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(
-          color: colors.textPrimary,
+          color: colors.onPrimary,
           fontSize: AppTypography.headline6,
           fontWeight: AppTypography.semiBold,
         ),
@@ -296,6 +297,7 @@ class AppTheme {
       // Color Scheme
       colorScheme: ColorScheme.dark(
         primary: colors.primary,
+        onPrimary: colors.onPrimary,
         primaryContainer: colors.primaryDark,
         secondary: colors.secondary,
         secondaryContainer: colors.secondaryDark,
@@ -313,12 +315,12 @@ class AppTheme {
 
       // AppBar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: colors.surface,
-        foregroundColor: colors.textPrimary,
+        backgroundColor: colors.primary,
+        foregroundColor: colors.onPrimary,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(
-          color: colors.textPrimary,
+          color: colors.onPrimary,
           fontSize: AppTypography.headline6,
           fontWeight: AppTypography.semiBold,
         ),

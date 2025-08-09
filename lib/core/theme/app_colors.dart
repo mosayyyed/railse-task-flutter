@@ -44,6 +44,8 @@ class LightColors {
 
   // Primary Colors
   Color get primary => AppColors.primaryBlue;
+
+  Color get onPrimary => AppColors.white;
   Color get primaryDark => AppColors.primaryBlueDark;
   Color get primaryLight => AppColors.primaryBlueLight;
 
@@ -95,6 +97,8 @@ class DarkColors {
 
   // Primary Colors
   Color get primary => AppColors.primaryBlueLight;
+
+  Color get onPrimary => AppColors.white;
   Color get primaryDark => AppColors.primaryBlueDark;
   Color get primaryLight => AppColors.primaryBlue;
 
