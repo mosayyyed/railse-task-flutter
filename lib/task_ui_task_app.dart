@@ -26,9 +26,6 @@ class TaskUITaskApp extends StatelessWidget {
             backgroundColor: Colors.blue,
             foregroundColor: Colors.white,
           ),
-          cardTheme: const CardThemeData(
-            elevation: 2,
-          ),
         ),
       ),
     );
