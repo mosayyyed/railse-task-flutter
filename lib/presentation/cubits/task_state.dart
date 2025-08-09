@@ -1,58 +1,21 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:task_manager_ui/data/models/task_model.dart';
 
-abstract class TaskState extends Equatable {
-  const TaskState();
+part 'task_state.freezed.dart';
 
-  @override
-  List<Object?> get props => [];
-}
+@freezed
+class TaskState with _$TaskState {
+  const factory TaskState.initial() = TaskInitial;
 
-class TaskInitial extends TaskState {}
+  const factory TaskState.loading() = TaskLoading;
 
-class TaskLoading extends TaskState {}
+  const factory TaskState.loaded(List<TaskModel> tasks) = TaskLoaded;
 
-class TaskLoaded extends TaskState {
-  final List<TaskModel> tasks;
+  const factory TaskState.error(String message) = TaskError;
 
-  const TaskLoaded(this.tasks);
+  const factory TaskState.added(TaskModel task) = TaskAdded;
 
-  @override
-  List<Object?> get props => [tasks];
-}
+  const factory TaskState.updated(TaskModel task) = TaskUpdated;
 
-class TaskError extends TaskState {
-  final String message;
-
-  const TaskError(this.message);
-
-  @override
-  List<Object?> get props => [message];
-}
-
-class TaskAdded extends TaskState {
-  final TaskModel task;
-
-  const TaskAdded(this.task);
-
-  @override
-  List<Object?> get props => [task];
-}
-
-class TaskUpdated extends TaskState {
-  final TaskModel task;
-
-  const TaskUpdated(this.task);
-
-  @override
-  List<Object?> get props => [task];
-}
-
-class TaskDeleted extends TaskState {
-  final String taskId;
-
-  const TaskDeleted(this.taskId);
-
-  @override
-  List<Object?> get props => [taskId];
+  const factory TaskState.deleted(String taskId) = TaskDeleted;
 }
