@@ -63,7 +63,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 20),
 
-                // Title field
                 TextFormField(
                   controller: _titleController,
                   decoration: const InputDecoration(
@@ -79,7 +78,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 16),
 
-                // Description field
                 TextFormField(
                   controller: _descriptionController,
                   decoration: const InputDecoration(
@@ -96,7 +94,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 16),
 
-                // Assigned to field
                 TextFormField(
                   controller: _assignedToController,
                   decoration: const InputDecoration(
@@ -112,7 +109,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 16),
 
-                // Status dropdown
                 DropdownButtonFormField<TaskStatus>(
                   value: _selectedStatus,
                   decoration: const InputDecoration(
@@ -135,7 +131,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 16),
 
-                // Priority dropdown
                 DropdownButtonFormField<TaskPriority>(
                   value: _selectedPriority,
                   decoration: const InputDecoration(
@@ -158,7 +153,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 16),
 
-                // Due date selector
                 InkWell(
                   onTap: () => _selectDueDate(),
                   child: InputDecorator(
@@ -174,7 +168,6 @@ class _EditTaskDialogState extends State<EditTaskDialog> {
                 ),
                 const SizedBox(height: 24),
 
-                // Action buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [

@@ -18,7 +18,7 @@ class TaskUITaskApp extends StatelessWidget {
         home: const HomeScreen(),
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.system, // يتبع إعدادات النظام
+        themeMode: ThemeMode.system,
       ),
     );
   }
