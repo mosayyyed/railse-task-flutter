@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager_ui/presentation/widgets/add_task_dialog.dart';
+import 'package:task_manager_ui/presentation/widgets/add_task_bottom_sheet.dart';
 
 class AddTaskFloatingActionButton extends StatelessWidget {
   const AddTaskFloatingActionButton({super.key});
@@ -15,6 +15,6 @@ class AddTaskFloatingActionButton extends StatelessWidget {
   }
 
   void _onAddTaskPressed(BuildContext context) {
-    showDialog(context: context, builder: (context) => const AddTaskDialog());
+    AddTaskBottomSheet.show(context);
   }
 }
