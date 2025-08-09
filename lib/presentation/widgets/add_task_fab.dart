@@ -7,8 +7,9 @@ class AddTaskFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       onPressed: () => _onAddTaskPressed(context),
+      tooltip: 'Add Task',
+      elevation: 0,
       child: const Icon(Icons.add),
     );
   }
