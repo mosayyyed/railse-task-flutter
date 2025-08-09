@@ -12,22 +12,25 @@ class TaskItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      decoration: BoxDecoration(
-        border: BoxBorder.fromLTRB(
-          left: BorderSide(color: _getStatusColor(task.status), width: 5.0),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Expanded(child: _buildTaskInfo(task, context)),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [_buildTaskActions(task, index, context)],
+    return Opacity(
+      opacity: task.status == TaskStatus.completed ? 0.5 : 1.0,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        decoration: BoxDecoration(
+          border: Border(
+            left: BorderSide(color: _getStatusColor(task.status), width: 5.0),
           ),
-        ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(child: _buildTaskInfo(task, context)),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [_buildTaskActions(task, index, context)],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -38,10 +41,18 @@ class TaskItemWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              task.title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Flexible(
+              child: Text(
+                task.title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ),
+            const SizedBox(width: 8),
             _buildActionMenu(context),
           ],
         ),
@@ -49,11 +60,19 @@ class TaskItemWidget extends StatelessWidget {
         Text(
           task.description,
           style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
         ),
         const SizedBox(height: 4),
         Row(
           children: [
-            Text(task.assignedTo),
+            Flexible(
+              child: Text(
+                task.assignedTo,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
+            ),
             const SizedBox(width: 8),
             if (task.priority == TaskPriority.high) _buildHighPriorityTag(),
           ],
@@ -77,6 +96,8 @@ class TaskItemWidget extends StatelessWidget {
           color: Colors.red,
           fontWeight: FontWeight.bold,
         ),
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
       ),
     );
   }
@@ -120,6 +141,8 @@ class TaskItemWidget extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(fontSize: 12, color: color, fontWeight: FontWeight.bold),
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
     );
   }
 
@@ -127,6 +150,8 @@ class TaskItemWidget extends StatelessWidget {
     return Text(
       'Started on: ${_formatDate(DateTime.now().subtract(Duration(days: index)))}',
       style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
     );
   }
 
@@ -161,12 +186,16 @@ class TaskItemWidget extends StatelessWidget {
       children: [
         Icon(icon, color: color, size: 16),
         const SizedBox(width: 4),
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: 10,
-            color: color,
-            fontWeight: FontWeight.bold,
+        Flexible(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 10,
+              color: color,
+              fontWeight: FontWeight.bold,
+            ),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ),
       ],
@@ -203,7 +232,7 @@ class TaskItemWidget extends StatelessWidget {
             children: [
               Icon(Icons.edit, color: Colors.blue),
               SizedBox(width: 8),
-              Text('Edit Task'),
+              Text('Edit Task', overflow: TextOverflow.ellipsis, maxLines: 1),
             ],
           ),
         ),
@@ -213,7 +242,7 @@ class TaskItemWidget extends StatelessWidget {
             children: [
               Icon(Icons.delete, color: Colors.red),
               SizedBox(width: 8),
-              Text('Delete Task'),
+              Text('Delete Task', overflow: TextOverflow.ellipsis, maxLines: 1),
             ],
           ),
         ),
@@ -224,7 +253,11 @@ class TaskItemWidget extends StatelessWidget {
               children: [
                 Icon(Icons.play_arrow, color: Colors.green),
                 SizedBox(width: 8),
-                Text('Start Task'),
+                Text(
+                  'Start Task',
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
               ],
             ),
           ),
@@ -235,7 +268,11 @@ class TaskItemWidget extends StatelessWidget {
               children: [
                 Icon(Icons.check_circle, color: Colors.green),
                 SizedBox(width: 8),
-                Text('Complete Task'),
+                Text(
+                  'Complete Task',
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ),
               ],
             ),
           ),
@@ -272,7 +309,11 @@ class TaskItemWidget extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Confirm Delete'),
-        content: Text('Are you sure you want to delete "${task.title}"?'),
+        content: Text(
+          'Are you sure you want to delete "${task.title}"?',
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
